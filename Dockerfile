@@ -8,7 +8,11 @@ RUN go mod download && go mod verify
 
 COPY . .
 
-RUN go build -v -o /usr/local/bin/app ./...
+COPY files/entrypoint.sh /usr/local/bin/entrypoint.sh
 
-CMD ["app"]
+# Make entrypoint script executable and run it on container start-up.
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+
+CMD bash -C '/usr/local/bin/entrypoint.sh';'bash'
 

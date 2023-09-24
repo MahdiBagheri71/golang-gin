@@ -10,6 +10,7 @@ services:
       - "8080"
     volumes:
       - .:/usr/src/app
+      - ./files/entrypoint.sh:/usr/local/bin/entrypoint.sh
     networks:
       - golang_gin
 

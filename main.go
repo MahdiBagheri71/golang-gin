@@ -8,7 +8,7 @@ func main() {
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
-			"message": "Hello, Mahdi!",
+			"message": "Hello, Mahdi :)",
 		})
 	})
 	r.Run(":8080")
