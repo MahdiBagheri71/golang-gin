@@ -3,6 +3,8 @@ version: '3'
 services:
   web_golang_gin:
     container_name: 'web_golang_gin'
+    restart: unless-stopped
+    tty: true
     build:
       context: .
       dockerfile: Dockerfile
